@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <title>Informacion de Usuario y formulario</title>
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
+    <!-- Nuestro css-->
+    <link rel="stylesheet" href="{% static 'dataapp/css/principal.css' %}" />
+    <link rel="stylesheet" href="{% static 'dataapp/css/formularioAdmin.css' %}">
+
+    <!--JQUERY-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <!-- Los iconos tipo Solid -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!--TABLE -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#userList').DataTable();
+        });
+    </script>
+</head>
+
+<body style="background-color: black;">
+    <div class="container">
+        <div class="mx-auto col-sm-12 main-section" id="myTab" role="tablist">
+            <ul class="nav nav-tabs justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab"
+                        aria-controls="list" aria-selected="false">Detalle de Compras</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Detalle de compras segun Numero de Venta</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="userList" class="table table-bordered table-hover table-striped">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Numero de Venta</th>
+                                            <th scope="col">Nombre Producto</th>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Precio unitario</th>
+                                            <th scope="col">porcentaje de descuento</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for com in detalle %}
+                                        <tr>
+                                            <th scope="row">{{numeroboleta}}</th>
+                                            <td>{{com.idProducto}}</td> 
+                                            <td>{{com.cantidad}}</td>
+                                            <td>{{com.precio}}</td>
+                                            <td>{{com.descuento}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!---------------------->
+
+                <!-- Incio Navegacion -->
+                <header class="header">
+                    <nav class="nav" style="height: 55px;">
+                        <div class="total" href="{% url 'carrito' %}" type="button">Sin Compras</div>
+                        <a href="{% url 'index' %}" class="logo nav-link"></a>
+                        <button class="nav-toggle" aria-label="Abrir menú">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <ul class="nav-menu">
+                            <li class="nav-menu-item" role="presentation">
+                                <a href="{% url 'index' %}" class="nav-menu-link nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-menu-item" role="presentation"><a href="{% url 'perro' %}"
+                                    class="nav-menu-link nav-link">Perro</a>
+                            </li>
+                            <li class="nav-menu-item" role="presentation"><a href="{% url 'gato' %}"
+                                    class="nav-menu-link nav-link">Gato</a>
+                            </li>
+                            <li class="nav-menu-item" role="presentation">
+                                <a href="{% url 'sesion' %}" class="nav-menu-link nav-link">Iniciar Sesión</a>
+                            </li>
+                            <li class="nav-menu-item" role="presentation">
+                                <a href="{% url 'nosotros' %}" class="nav-menu-link nav-link">Nosotros</a>
+                            </li>
+                            <li class="nav-menu-item" role="presentation">
+                                <a href="{% url 'contactanos' %}" class="nav-menu-link nav-link">Contacto</a>
+                            </li>
+                            <li class="nav-menu-item" role="presentation">
+                                <a href="{% url 'dona' %}" class="nav-menu-link nav-link">Donaciones</a>
+                            </li>
+                            <li class="nav-menu-item" role="presentation">
+                                <a href="{% url 'carrito' %}" class="nav-menu-link nav-link">Carrito</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <!-- Fin Navegacion -->
+
+                <div class="tab-pane fade carrito" id="pills-contact" role="tabpanel"
+                    aria-labelledby="pills-contact-tab" style="display: none;">
+                    <br>
+                    <table class="table table-dark table-hover">
+                        <thead>
+                            <tr class="text-primary">
+                                <th scope="col">#</th>
+                                <th scope="col">Productos</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <div class="row mx-4">
+                        <div class="col">
+                            <h3 class="itemCartTotal text-white">Total: 0</h3>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                            <a href="{% url 'pagar' %}" class="btn btn-success">COMPRAR</a>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+                    crossorigin="anonymous"></script>
+                <script src="{% static 'dataapp/js/carroCompra.js' %}"></script>
+</body>
+
+</html>

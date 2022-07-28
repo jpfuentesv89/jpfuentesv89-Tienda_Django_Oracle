@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
+	<!-- Nuestro css-->
+	<link rel="stylesheet" href="{% static 'dataapp/css/principal.css' %}" />
+	<link rel="stylesheet" href="{% static 'dataapp/css/registrouser.css' %}">
+	<link rel="stylesheet" href="{% static 'dataapp/css/carroCompra.css' %}" />
+	<title>Modificar Usuario</title>
+</head>
+
+<body>
+	<!-- Inicio Formulario registro -->
+	<div class="reg">
+		<main>
+			<h1 style="text-align: center ;">Modificar Usuario</h1>
+			<form method="post" action="" id="formulario" class="formulario">
+				{% csrf_token %}
+				<div class="form-group" style="display: grid; grid-template-columns: 1fr; padding: 10px; ">
+				{{ form.as_table }}				
+				</div>
+				<br>
+				<button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Actualizar </button>
+				<button type="reset" class="btn btn-danger"><i class="fas fa-sign-in-alt"></i> Limpiar </button>
+			</form>
+			<div class="alert alert-success" role="alert">
+				{{mensaje}}
+			</div>
+		</main>
+	</div>
+	<!-- Fin Formulario registro -->
+	<!---------------------->
+	<!-- Incio Navegacion -->
+	<header class="header">
+		<nav class="nav" style="height: 55px;">
+			<div class="total" href="{% url 'carrito' %}" type="button">Sin Compras</div>
+			<a href="{% url 'index' %}" class="logo nav-link"></a>
+			<button class="nav-toggle" aria-label="Abrir menú">
+				<i class="fas fa-bars"></i>
+			</button>
+			<ul class="nav-menu">
+				<li class="nav-menu-item" role="presentation">
+					<a href="{% url 'index' %}" class="nav-menu-link nav-link">Inicio</a>
+				</li>
+				<li class="nav-menu-item" role="presentation"><a href="{% url 'perro' %}"
+						class="nav-menu-link nav-link">Perro</a>
+				</li>
+				<li class="nav-menu-item" role="presentation"><a href="{% url 'gato' %}"
+						class="nav-menu-link nav-link">Gato</a>
+				</li>
+				<li class="nav-menu-item" role="presentation">
+					<a href="{% url 'sesion' %}" class="nav-menu-link nav-link">Iniciar Sesión</a>
+				</li>
+				<li class="nav-menu-item" role="presentation">
+					<a href="{% url 'nosotros' %}" class="nav-menu-link nav-link">Nosotros</a>
+				</li>
+				<li class="nav-menu-item" role="presentation">
+					<a href="{% url 'contactanos' %}" class="nav-menu-link nav-link">Contacto</a>
+				</li>
+				<li class="nav-menu-item" role="presentation">
+					<a href="{% url 'dona' %}" class="nav-menu-link nav-link">Donaciones</a>
+				</li>
+				<li class="nav-menu-item" role="presentation">
+					<a href="{% url 'carrito' %}" class="nav-menu-link nav-link">Carrito</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Fin Navegacion -->
+
+	<div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+		Producto Añadido al carrito!
+	</div>
+	<div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+		Producto removido!
+	</div>
+
+	<div class="tab-pane fade carrito" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+		style="display: none;">
+		<br>
+		<table class="table table-dark table-hover">
+			<thead>
+				<tr class="text-primary">
+					<th scope="col">#</th>
+					<th scope="col">Productos</th>
+					<th scope="col">Precio</th>
+					<th scope="col">Cantidad</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+			</tbody>
+		</table>
+		<br><br>
+		<div class="row mx-4">
+			<div class="col">
+				<h3 class="itemCartTotal text-white">Total: 0</h3>
+			</div>
+			<div class="col d-flex justify-content-end">
+				<a href="{% url 'pagar' %}" class="btn btn-success">COMPRAR</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"></script>
+	<script src="{% static 'dataapp/js/carroCompra.js' %}"></script>
+	<script src="{% static 'dataapp/js/jquery.js' %}"></script>
+</body>
+
+</html>

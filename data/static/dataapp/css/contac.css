@@ -1,0 +1,64 @@
+#centro {
+    position: center;
+    width: 800px;
+    left: 25%;
+    margin: auto;
+    border: 0px solid;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+#izquierdacon {
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    border: 0px solid;
+    float: left;
+}
+
+#derechacon {
+    width: 500px;
+    border: 0px solid;
+    height: auto;
+    overflow: hidden;
+    float: right;
+
+}
+
+textarea {
+    padding: 10px;
+    margin: 5px;
+}
+
+.nombre-mensaje {
+    width: 60%;
+}
+
+.email-asunto {
+    width: 60%;
+}
+
+
+input[type="submit"] {
+    padding: 5px;
+    background: #0489B1;
+    color: #fff;
+    border: 1px solid #086A87;
+    border-radius: 5px;
+}
+
+#mapa {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+
+}
+
+.fondobla {
+    background-color: rgba(245, 237, 237, 0.9);
+    margin-left: 50px;
+    margin-right: 80px;
+}

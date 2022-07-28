@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'dataapp/css/principal.css' %}" />
+    <link rel="stylesheet" href="{% static 'dataapp/css/reloj.css' %}" />
+    <link rel="stylesheet" href="{% static 'dataapp/css/carusel.css' %}">
+    <link rel="stylesheet" href="{% static 'dataapp/css/carroCompra.css' %}" />
+    <title>Tienta Mascotas</title>
+</head>
+
+<body>
+    <div class="principal">
+        <!-- inicio Sub Pagina objcarro -->
+        <div id="objcarro">
+            <div class="negro" onclick="cerrarobjcarro()"></div>
+            <div class="subpage-carro">
+                <table id="listacompra">
+                </table>
+            </div>
+        </div>
+        <!-- Fin Sub Pagina objcarro -->
+        <!-- inicio Sub Pagina objtienda -->
+        <div id="objtienda">
+            <div class="negro" onclick="cerrarobjtienda()"></div>
+            <div class="subpage"></div>
+        </div>
+        <!-- Fin Sub Pagina objtienda -->
+        <!---->
+
+        <!-- Incio Navegacion -->
+        <header class="header">
+            <nav class="nav">
+                <div class="total" href="{% url 'carrito' %}" type="button">Sin Compras</div>
+                <a href="{% url 'index' %}" class="logo nav-link"></a>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-menu-item" role="presentation">
+                        <a href="{% url 'index' %}" class="nav-menu-link nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-menu-item" role="presentation"><a href="{% url 'perro' %}"
+                            class="nav-menu-link nav-link">Perro</a>
+                    </li>
+                    <li class="nav-menu-item" role="presentation"><a href="{% url 'gato' %}"
+                            class="nav-menu-link nav-link">Gato</a>
+                    </li>
+                    <li class="nav-menu-item" role="presentation">
+                        <a href="{% url 'sesion' %}" class="nav-menu-link nav-link">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-menu-item" role="presentation">
+                        <a href="{% url 'nosotros' %}" class="nav-menu-link nav-link">Nosotros</a>
+                    </li>
+                    <li class="nav-menu-item" role="presentation">
+                        <a href="{% url 'contactanos' %}" class="nav-menu-link nav-link">Contacto</a>
+                    </li>
+                    <li class="nav-menu-item" role="presentation">
+                        <a href="{% url 'dona' %}" class="nav-menu-link nav-link">Donaciones</a>
+                    </li>
+                    <li class="nav-menu-item" role="presentation">
+                        <a href="{% url 'carrito' %}" class="nav-menu-link nav-link">Carrito</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Fin Navegacion -->
+        <!-------------->
+        <!----- inicio reloj---------->
+        <div class="reloj">
+            <H1 class="mensaje">Bienvenido a DOG-SHOP</H1>
+            <br>
+            <p class="fecha"></p>
+            <p class="tiempo"></p>
+            <!----- inicio tabla API Clima---------->
+            <p class="text-center m-0 text-muted">
+            <div class="row">
+                <table class="table" id="clima">
+                </table>
+            </div>
+            </p>
+            <!----- fin tabla API Clima ---------->
+        </div>
+        <!----- fin reloj---------->
+    </div>
+
+
+    <!-- Inicio Carrusel-->
+
+    <div class="envoltuñe">
+        <div class="cosas2">
+            <div class="card" style="--delay:0;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-1.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu gatito</span>
+                        <p>Pañuelo de gato</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+            <div class="card" style="--delay:-1;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-2.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu perrito</span>
+                        <p>Hueso de goma</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+            <div class="card" style="--delay:2;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-3.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu gatito</span>
+                        <p>Raton rascable</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+            <div class="card" style="--delay:1;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-5.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu gatito</span>
+                        <p>Collar rastreador</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+
+            <div class="card" style="--delay:2;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-4.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu perrito</span>
+                        <p>Collar con placa</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+        </div>
+        <!------------------------------------------>
+        <!------------------------------------------>
+        <div class="cosas">
+            <div class="card" style="--delay:-1;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-1.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu gatito</span>
+                        <p>Pañuelo de gato</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+            <div class="card" style="--delay:0;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-2.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu perrito</span>
+                        <p>Hueso de goma</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+            <div class="card" style="--delay:1;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-3.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu gatito</span>
+                        <p>Raton rascable</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+            <div class="card" style="--delay:2;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-4.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu perrito</span>
+                        <p>Collar con placa</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+
+            <div class="card" style="--delay:2;">
+                <div class="content">
+                    <div class="img"><img src="{% static 'dataapp/img/img-5.png' %}" alt=""></div>
+                    <div class="detalles">
+                        <span class="nombre cosa">Para tu gatito</span>
+                        <p>Collar rastreador</p>
+                    </div>
+                </div>
+                <a href="#">Comprar</a>
+            </div>
+        </div>
+        <!------------------------------------------>
+        <!------------------------------------------>
+    </div>
+    <!------------- Fin Carusel --------------->
+
+    <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+        Producto Añadido al carrito!
+    </div>
+    <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+        Producto removido!
+    </div>
+
+    <div class="tab-pane fade carrito" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+        style="display: none;">
+        <br>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr class="text-primary">
+                    <th scope="col">#</th>
+                    <th scope="col">Productos</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+            </tbody>
+        </table>
+        <br><br>
+        <div class="row mx-4">
+            <div class="col">
+                <h3 class="itemCartTotal text-white">Total: 0</h3>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <a href="{% url 'pagar' %}" class="btn btn-success">COMPRAR</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+
+    <script src="{% static 'dataapp/js/jquery.js' %}"></script>
+    <script src="{% static 'dataapp/js/reloj.js' %}"></script>
+    <script src="{% static 'dataapp/js/carroCompra.js' %}"></script>
+
+</body>
+
+</html>

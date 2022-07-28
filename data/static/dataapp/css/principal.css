@@ -1,0 +1,745 @@
+body {
+    max-height: 200px;
+    margin: 0px;
+    font-family: sans-serif;
+    background-image: url("../img/pasto.jpg");
+    background-position: top;
+    background-size: 100%;
+    background-color: black;
+}
+
+
+/* inicio  declaro subpage */
+
+#subperro {
+    position: fixed;
+    display: none;
+    z-index: 1;
+}
+
+#subgato {
+    position: fixed;
+    display: none;
+    z-index: 1;
+}
+
+#inisesion {
+    position: fixed;
+    display: none;
+    z-index: 1;
+}
+
+#iniregistra {
+    position: fixed;
+    display: none;
+    z-index: 1;
+}
+
+#objtienda {
+    position: fixed;
+    display: none;
+    z-index: 1;
+}
+
+#objcarro {
+    position: fixed;
+    display: none;
+    z-index: 1;
+}
+
+/* fin declaro subpage */
+
+/* ------- */
+
+/* inicio subpage */
+/*-----*/
+/* inicio sub container carrito*/
+.subpage-carro {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 90%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+#listacompra {
+    margin-top: 150px;
+    margin-left: 25%;
+}
+
+.subpage-carro tr td {
+    padding: 10px;
+    border: rgb(0, 0, 0) 1px solid;
+    background-color: rgb(255, 0, 242);
+    overflow-y: auto;
+}
+
+.subpage-carro tr th {
+    padding: 10px;
+    border: rgb(0, 0, 0) 1px solid;
+    background-color: orange;
+    overflow-y: auto;
+}
+
+/* fin sub container carrito*/
+/*------*/
+/* inicio sub container formulario*/
+
+.negro-from {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: black;
+    justify-content: center;
+    z-index: -1;
+}
+
+.subpage-from {
+    z-index: 1;
+    width: 100%;
+    margin-right: 1080px;
+}
+
+.subpage-container-from {
+    position: fixed;
+    left: 25%;
+    right: 20%;
+    margin-top: 1%;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    text-align: center;
+    border: rgb(0, 0, 0) 1px solid;
+    background-color: aliceblue;
+    text-decoration: none;
+}
+
+.sbcontenedor {
+    width: 100%;
+    padding: 15px;
+}
+
+.sbformulario {
+    background: #fff;
+    margin-top: 150px;
+    margin-right: 25%;
+    padding: 6px;
+}
+
+#sbh1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 20px;
+    width: 80%;
+    padding: 10px;
+    border: none;
+}
+
+.sbinput-contenedor {
+    margin-bottom: 10px;
+    border: 0, 5px solid #aaa;
+}
+
+.sbicon {
+    min-width: 10px;
+    text-align: left;
+    color: #999;
+}
+
+.sbbutton {
+    border: none;
+    width: 95%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sbbutton:hover {
+    background: cadetblue;
+}
+
+.sbp {
+    text-align: lef;
+}
+
+.sblink {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+.sblink:hover {
+    color: cadetblue;
+    cursor: pointer;
+}
+
+@media(min-width:768px) {
+    .sbformulario {
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}
+
+/* fin sub container formulario*/
+/*-------*/
+/* inicio sub container general*/
+
+.negro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: black;
+    justify-content: center;
+    z-index: 1;
+}
+
+.subpage {
+    position: fixed;
+    justify-content: center;
+    justify-items: center;
+    padding-top: 120px;
+    margin: 50px 2%;
+    z-index: 1;
+    border-radius: 10px 10px 10px 10px;
+    height: 100%;
+    width: 97%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+    gap: 1rem;
+    overflow-y: auto;
+    bottom: 10px;
+}
+
+.cerrar {
+    position: fixed;
+    display: flex;
+    margin-left: 92%;
+    justify-content: center;
+    border: black 1px solid;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.cerrar:hover {
+    background-color: rgb(255, 0, 242);
+    color: white;
+}
+
+.subpage-container {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 460px;
+    width: 250px;
+    z-index: 1;
+    text-align: center;
+    border: rgb(0, 0, 0) 1px solid;
+    background-color: aliceblue;
+    text-decoration: none;
+}
+
+.subpage-container:hover {
+    text-decoration: none;
+    background-color: rgb(219, 206, 173);
+    border: rgb(212, 12, 12) 1px solid;
+}
+
+.subpage-container .img-container {
+    justify-content: center;
+    height: 250px;
+    position: relative;
+    border-radius: 15px;
+    bottom: 0;
+    margin: 0;
+}
+
+.subpage-container .img-container img {
+    top: 10px;
+    right: 15px;
+    width: 90%;
+    position: absolute;
+    transition: all 0.8s;
+}
+
+.subpage-container:hover .img-container img {
+    transform: scale(1.4);
+}
+
+.subpage-container .img-container .promo {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    font-size: 20px;
+    background: yellow;
+    padding: 15px;
+    color: black;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.subpage-container .info-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.subpage-container .info-container h3 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.subpage-container .info-container h3,
+.subpage-container .info-container strong,
+.subpage-container .info-container span {
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.subpage-container .add-cart {
+    margin-top: 2px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.subpage-container .add-cart:hover {
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+/* fin sub container general*/
+/*-----*/
+/*fin subpage*/
+
+/*----*/
+
+/*inicio primera nav*/
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    height: 55px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 40px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link {
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+    background-color: rgb(153, 16, 153);
+    color: white;
+    transition: 0.6s;
+}
+
+/* TOGGLE */
+.nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    display: none;
+}
+
+/* vercion celular*/
+@media (max-width: 900px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .header {
+        height: 60px;
+        z-index: 1;
+    }
+
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        left: 100%;
+        transition: left 0.6s;
+    }
+
+    .nav-menu-item {
+        line-height: 70px;
+    }
+
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+        background: none;
+        color: #83c5f7;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        left: 0;
+    }
+
+    .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+/* fin primera nav*/
+
+/*-------------*/
+
+/* inicio segunda nav*/
+.header2 {
+    background-color: rgb(0, 0, 0);
+    height: 35px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.nav2 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-link2 {
+    color: white;
+    text-decoration: none;
+}
+
+.logo2 {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 30px;
+}
+
+.nav-menu2 {
+    display: flex;
+    margin-right: 25%;
+    list-style: none;
+}
+
+.nav-menu-item2 {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 30px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link2 {
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nav-menu-link2:hover,
+.nav-menu-link_active2 {
+    background-color: rgb(153, 16, 153);
+    color: white;
+    transition: 0.6s;
+}
+
+/* fin segunda nav*/
+/*------------*/
+/* inicio carrucel*/
+
+.carrusel {
+    margin-top: 6%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.carrusel h1 {
+    justify-content: center;
+}
+
+.carrusel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 1600px;
+    scroll-behavior: smooth;
+}
+
+@keyframes cambio {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+
+
+}
+
+.carrusel-menu img {
+    box-sizing: border-box;
+    width: 50px;
+    height: 40px;
+    background-color: orange;
+    border: 1px solid black;
+}
+
+.carrusel-menu img:hover {
+    border: none;
+}
+
+.carrusel-fotos {
+    display: flex;
+    gap: 10px;
+    overflow: auto;
+}
+
+.carrusel-fotos img {
+    width: 800px;
+    height: 650px;
+    object-fit: contain;
+    animation: cambio 20s infinite alternate linear;
+}
+
+.carrusel-menu {
+    display: block;
+}
+
+.carrusel-fotos {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 700px) {
+    .carrusel-fotos img {
+        width: 400px;
+        height: 450px;
+    }
+}
+
+/* fin carrusel*/
+
+.total {
+    position: fixed;
+    left: 0;
+    top: 0;
+    border: none;
+    color: white;
+    background: rgb(0, 0, 0);
+    padding: 14px 25px;
+    border-radius: 3px;
+    display: inline-block;
+    z-index: 2;
+
+}
+
+/*- inicio pagina contactanos*/
+#centro {
+    position: center;
+    width: 800px;
+    left: 25%;
+    margin: auto;
+    border: 0px solid;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+#izquierdacon {
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    border: 0px solid;
+    float: left;
+}
+
+#derechacon {
+    width: 500px;
+    border: 0px solid;
+    height: auto;
+    overflow: hidden;
+    float: right;
+
+}
+
+textarea {
+    padding: 10px;
+    margin: 5px;
+}
+
+.nombre-mensaje {
+    width: 60%;
+}
+
+.email-asunto {
+    width: 60%;
+}
+
+
+input[type="submit"] {
+    padding: 5px;
+    background: #0489B1;
+    color: #fff;
+    border: 1px solid #086A87;
+    border-radius: 5px;
+}
+
+#mapa {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+
+}
+
+.fondobla {
+    background-color: rgba(245, 237, 237, 0.9);
+    margin-left: 50px;
+    margin-right: 80px;
+}
+
+/* fin pagina contactanos */
+/*-----*/
+/*  inicio pagina nosotros*/
+#fono {
+    grid-template-columns: 2, 1fr;
+    gap: 300px;
+}
+
+
+
+#tablasp {
+    background: rgba(162, 3, 194, 0.452);
+    border-radius: 30%;
+
+}
+
+#foto {
+    border-radius: 50%;
+}
+
+.lados {
+    margin: 100px;
+}
+
+
+#izquierda {
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    border: 0px solid;
+    float: left;
+}
+
+/*  fin pagina nosotros*/
